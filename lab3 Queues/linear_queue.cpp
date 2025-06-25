@@ -3,7 +3,7 @@
 
 #include<iostream>
 using namespace std;
-#define MAX 5
+#define MAX 3
 int queue[MAX];
 int front = -1, rear = -1;
 
@@ -43,31 +43,41 @@ void display() {
 }
 int main() {
 
-    int choice, value;
-    do {
-        cout << "1. Enqueue\n2. Dequeue\n3. Display\n4. Exit\n";
-        cout << "Enter your choice: ";
-        cin >> choice;
+    enqueue(10);
+    enqueue(20);
+    enqueue(30);
+    enqueue(40); 
+    display();
+    dequeue();
+    display();
+    enqueue(50); 
+    display();
 
-        switch (choice) {
-            case 1:
-                cout << "Enter value to enqueue: ";
-                cin >> value;
-                enqueue(value);
-                break;
-            case 2:
-                dequeue();
-                break;
-            case 3:
-                display();
-                break;
-            case 4:
-                cout << "Exiting..." << endl;
-                break;
-            default:
-                cout << "Invalid choice! Please try again." << endl;
-        }
-    } while (choice != 4);
+    // int choice, value;
+    // do {
+    //     cout << "1. Enqueue\n2. Dequeue\n3. Display\n4. Exit\n";
+    //     cout << "Enter your choice: ";
+    //     cin >> choice;
+
+    //     switch (choice) {
+    //         case 1:
+    //             cout << "Enter value to enqueue: ";
+    //             cin >> value;
+    //             enqueue(value);
+    //             break;
+    //         case 2:
+    //             dequeue();
+    //             break;
+    //         case 3:
+    //             display();
+    //             break;
+    //         case 4:
+    //             cout << "Exiting..." << endl;
+    //             break;
+    //         default:
+    //             cout << "Invalid choice! Please try again." << endl;
+    //     }
+    // } while (choice != 4);
 
     return 0;
 }

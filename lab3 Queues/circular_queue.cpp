@@ -4,7 +4,7 @@
 
 #include <iostream>
 using namespace std;
-#define MAX 5
+#define MAX 3
 int queue[MAX];
 int front = -1, rear = -1;
 void enqueue(int value) {
@@ -19,6 +19,7 @@ void enqueue(int value) {
         rear++;
     }
     queue[rear] = value;
+    cout << "Enqueued: " << value << endl;
 }
 void dequeue() {
     if (front == -1) { 
@@ -55,28 +56,39 @@ void display() {
     cout << endl;
 }
 int main() {
-    int choice, value;
-    while (true) {
-        cout << "1. Enqueue\n2. Dequeue\n3. Display\n4. Exit\n";
-        cout << "Enter your choice: ";
-        cin >> choice;
-        switch (choice) {
-            case 1:
-                cout << "Enter value to enqueue: ";
-                cin >> value;
-                enqueue(value);
-                break;
-            case 2:
-                dequeue();
-                break;
-            case 3:
-                display();
-                break;
-            case 4:
-                return 0;
-            default:
-                cout << "Invalid choice, please try again." << endl;
-        }
-    }
+
+    enqueue(10);
+    enqueue(20);
+    enqueue(30);
+    enqueue(40);
+    display();
+    dequeue();
+    display();
+    enqueue(50);
+    display();
+
+    // int choice, value;
+    // while (true) {
+    //     cout << "1. Enqueue\n2. Dequeue\n3. Display\n4. Exit\n";
+    //     cout << "Enter your choice: ";
+    //     cin >> choice;
+    //     switch (choice) {
+    //         case 1:
+    //             cout << "Enter value to enqueue: ";
+    //             cin >> value;
+    //             enqueue(value);
+    //             break;
+    //         case 2:
+    //             dequeue();
+    //             break;
+    //         case 3:
+    //             display();
+    //             break;
+    //         case 4:
+    //             return 0;
+    //         default:
+    //             cout << "Invalid choice, please try again." << endl;
+    //     }
+    // }
     return 0;
 }
