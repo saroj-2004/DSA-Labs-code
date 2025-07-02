@@ -215,6 +215,7 @@ void display(newnode* start){
     while(temp != NULL){
         cout << temp->data << " ";
         temp = temp->next;
+
     }
     cout << endl;
 }
@@ -296,6 +297,9 @@ int main(){
                 break;
             default:
                 cout<<"Invalid choice. Please try again."<<endl;
+        }
+        if(choice == 11) {
+            break;
         }
     } 
 
